@@ -1,0 +1,15 @@
+.background-pic {
+    background-image: 
+        linear-gradient(rgba(0, 0, 0 , 0.5), rgba(0, 0, 0 , 0.6), rgba(0, 0, 0 , 0.8)), 
+        url("https://i.imgur.com/aviPmCj.jpg");
+    background-position: center;
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.online-search-input{
+    width:50%;
+}

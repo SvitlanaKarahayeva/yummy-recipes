@@ -18,7 +18,7 @@ class RecipeList extends Component {
     render() {
         return (
             <div>
-                <h1>All recipes</h1>
+                {/* <h1>All recipes</h1>
 
                 { this.state.recipes.length > 0 &&
                     <ul>
@@ -32,7 +32,7 @@ class RecipeList extends Component {
                 {
                     this.state.recipes.length === 0 &&
                     <div>No recipes created yet</div>
-                } 
+                }  */}
 
                 
             </div>
