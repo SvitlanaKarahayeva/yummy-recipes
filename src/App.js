@@ -1,12 +1,18 @@
+import React, { Component } from 'react';
+import RecipeList from './components/Recipes/RecipeList';
 
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello</h1>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <h1>Main Page</h1>
+        <hr />
+        <RecipeList />
+      </div>
+    )
+  }
 }
 
-export default App;
+
+
+export default  App;
