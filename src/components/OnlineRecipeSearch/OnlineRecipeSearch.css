@@ -13,3 +13,7 @@
 .online-search-input{
     width:50%;
 }
+.online-search-input h2 {
+    color: white;
+    margin-bottom: 30px;
+}

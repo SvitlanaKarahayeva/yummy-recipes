@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { getAllRecipes } from '../../services/recipes';
+// import { getAllRecipes } from '../../services/recipes';
 
 class RecipeList extends Component {
     constructor(props){
@@ -9,11 +9,11 @@ class RecipeList extends Component {
     }
   }
 
-  async componentDidMount(){
-    let data = await getAllRecipes() 
-    console.log(data)
-    this.setState({ recipes: data })   
-  }
+//   async componentDidMount(){
+//     let data = await getAllRecipes() 
+//     // console.log(data)
+//     this.setState({ recipes: data })   
+//   }
   
     render() {
         return (

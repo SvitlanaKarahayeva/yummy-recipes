@@ -1,23 +1,21 @@
-import React, { Component } from 'react';
+// Componenets
 import NavigationBar from '../../components/Navbar/Navbar';
 import RecipeList from '../../components/Recipes/RecipeList';
-import OnlineRecipeSearch from '../../components/OnlineRecipeSearch/OnlineRecipeSearch';
+import OnlineRecipePage from '../../components/OnlineRecipePage/OnlineRecipePage';
 
-class App extends Component {
-  render() {
+
+function App () {
+
     return (
       <div>
         <NavigationBar />
         <h1>Main Page</h1>
 
-        <OnlineRecipeSearch />
+        <OnlineRecipePage />
         <hr />
         <RecipeList />
       </div>
     )
   }
-}
-
-
 
 export default  App;
