@@ -6,6 +6,10 @@ const logger = require('morgan');
 require('dotenv').config()
 require('./config/database') 
 
+// ROUTES
+const recipesRouter = require("./routes/recipes")
+const usersRouter = require('./routes/users')
+
 const app = express();
 
 app.use(logger('dev'));
@@ -13,7 +17,11 @@ app.use(express.json());
 
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 
-app.use('/recipes', require("./routes/recipes"))
+
+app.use('/api/recipes', recipesRouter)
+app.use('/api/users', usersRouter)
+
+
 
 app.use(express.static(path.join(__dirname, 'build')));
 
