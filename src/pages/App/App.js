@@ -40,13 +40,21 @@ class App extends Component {
           render=
             {
               ({ history }) => 
-              <LoginPage history={history} handleRegisterOrLogin={this.handleRegisterOrLogin} />
+                <LoginPage 
+                  history={history} 
+                  handleRegisterOrLogin={this.handleRegisterOrLogin} />
             }
           />
 
-          <Route exact path="/register">
-            <RegisterPage handleRegisterOrLogin={this.handleRegisterOrLogin} />
-          </Route>
+          <Route exact path="/register"
+            render=
+            {
+              ({ history }) => 
+                <RegisterPage 
+                  history={history} 
+                  handleRegisterOrLogin={this.handleRegisterOrLogin} />
+            }
+          />
 
           <Route exact path="/onlinerecipes">
             <OnlineRecipePage />
