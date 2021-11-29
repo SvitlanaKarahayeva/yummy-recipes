@@ -1,0 +1,85 @@
+import React, { Component } from 'react';
+import './RegisterForm.css';
+import userService from '../../services/userService'
+
+class RegisterForm extends Component{
+    constructor(props){
+        super(props);
+        this.state= {
+            name: '',
+            email: '',
+            password: '',
+            confirmPassword: '',
+        }
+    }
+
+    handleChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
+    handleSubmit = async(event) => {
+        event.preventDefault()
+        //console.log(this.state)
+        try {
+            await userService.register(this.state);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+    render(){
+        return (
+            <div className="register">
+                <form className="registerForm" onSubmit={this.handleSubmit}>
+                    <span className="registerTitle"> Registration form</span>
+                    
+                    <label>Username</label>
+                    <input 
+                        className="registerInput" 
+                        type="text" 
+                        placeholder="Enter unique username" 
+                        name="name"
+                        onChange={this.handleChange}
+                    />
+                    
+                    <label>Email</label>
+                    <input 
+                        className="registerInput" 
+                        type="email" 
+                        placeholder="Enter Your Email"
+                        name="email"
+                        onChange={this.handleChange}
+                    />
+                    
+                    <label>Password</label>
+                    <input 
+                        className="registerInput" 
+                        type="password" 
+                        placeholder="Enter Your Password"
+                        name="password"
+                        onChange={this.handleChange}
+                    />
+                    
+                    <label>Confirm Password</label>
+                    <input 
+                        className="registerInput"  
+                        type="password" 
+                        placeholder="Confirm Password"
+                        name="confirmPassword"
+                        onChange={this.handleChange}
+                    />
+                    
+                    <button className="registerButton">Register</button>
+                
+                </form>
+                <span className="registerLoginSpan">If you have an account</span>
+                <button className="registerLoginButton">Login</button>
+            </div>
+        )
+    }
+   
+}
+
+export default RegisterForm;
