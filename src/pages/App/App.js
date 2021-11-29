@@ -2,6 +2,7 @@
 import NavigationBar from '../../components/Navbar/Navbar';
 import OnlineRecipePage from '../../components/OnlineRecipePage/OnlineRecipePage';
 import LoginPage from '../LoginPage/LoginPage';
+import Register from '../Register/Register'
 
 
 function App () {
@@ -11,7 +12,7 @@ function App () {
         <NavigationBar />
         <h1>Main Page</h1>
        
-       <LoginPage /> 
+       <Register /> 
       </div>
     )
   }
