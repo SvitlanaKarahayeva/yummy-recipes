@@ -1,0 +1,65 @@
+.register{
+    height: calc(100vh - 50px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(255, 255, 255, 0.795), rgba(255, 255, 255, 0.363)),
+        url("https://t3.ftcdn.net/jpg/02/52/12/40/240_F_252124067_aCtp9ZD934RboKmjJzkXiwYDL7XkNjpn.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+.registerTitle{
+    font-size: 50px;
+}
+
+.registerForm{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.registerForm > label{
+    margin: 10px 0;
+}
+
+.registerInput{
+    padding:10px;
+    background-color: white;
+    border: none;
+
+}
+
+.registerButton{
+    margin-top: 20px;
+    cursor: pointer;
+    background-color:lightcoral;
+    border: none;
+    color: white;
+    border-radius: 10px;
+    padding: 10px
+}
+
+.registerLoginSpan{
+    font-family: 'Varela', sans-serif;
+    position: absolute;
+    top: 110px;
+    right: 50px;
+    font-size: 25px;
+   
+}
+.registerLoginButton{
+    position: absolute;
+    font-family: 'Varela', sans-serif;
+    top: 150px;
+    right: 50px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    padding: 10px;
+    color: white;
+    background-color: teal;
+   
+}
