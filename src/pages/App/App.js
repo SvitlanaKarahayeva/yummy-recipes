@@ -1,6 +1,7 @@
 // Componenets
 import NavigationBar from '../../components/Navbar/Navbar';
 import OnlineRecipePage from '../../components/OnlineRecipePage/OnlineRecipePage';
+import LoginPage from '../LoginPage/LoginPage';
 
 
 function App () {
@@ -9,7 +10,8 @@ function App () {
       <div>
         <NavigationBar />
         <h1>Main Page</h1>
-        <OnlineRecipePage /> 
+       
+       <LoginPage /> 
       </div>
     )
   }
