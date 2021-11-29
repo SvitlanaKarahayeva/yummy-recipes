@@ -3,27 +3,49 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import { Component } from 'react'
 
 // Componenets
-import NavigationBar from '../../components/Navbar/Navbar';
+import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import OnlineRecipePage from '../../components/OnlineRecipePage/OnlineRecipePage';
 import LoginPage from '../LoginPage/LoginPage';
-import RegisterPage from '../RegisterPage/RegisterPage'
+import RegisterPage from '../RegisterPage/RegisterPage';
+import HomePage from "../HomePage/HomePage";
+import userService from "../../services/userService";
 
 
-function App () {
-  
+class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      user: userService.getUser()
+    }
+  }
+
+  handleRegisterOrLogin = () => {
+    this.setState({ user: userService.getUser() })
+  }
+
+  render(){
     return (
       <Router>
-        <NavigationBar />
+        <NavigationBar currentUser= {this.state.user} />
         <Switch>
           
-          <Route exact path="/login">
-            <LoginPage />
+        <Route exact path="/">
+            <HomePage />
           </Route>
 
+          <Route path='/login' 
+          render=
+            {
+              ({ history }) => 
+              <LoginPage history={history} handleRegisterOrLogin={this.handleRegisterOrLogin} />
+            }
+          />
+
           <Route exact path="/register">
-            <RegisterPage />
+            <RegisterPage handleRegisterOrLogin={this.handleRegisterOrLogin} />
           </Route>
 
           <Route exact path="/onlinerecipes">
@@ -32,9 +54,11 @@ function App () {
           
         
         </Switch>     
-      </Router>
-      
+      </Router> 
     )
   }
+  
+    
+}
 
 export default  App;

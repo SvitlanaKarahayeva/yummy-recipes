@@ -12,8 +12,9 @@
     }
 
 .loginTitle{
-    font-family: 'Varela Round', sans-serif;
-    font-size: 50px;
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Fredoka One', cursive;
+    font-size: 40px;
     text-align: center;
 }
 
@@ -48,7 +49,7 @@
 .loginRegSpan{
     font-family: 'Varela', sans-serif;
     position: absolute;
-    top: 200px;
+    top: 140px;
     right: 50px;
     font-size: 25px;
    
@@ -56,7 +57,7 @@
 .loginRegisterButton{
     position: absolute;
     font-family: 'Varela', sans-serif;
-    top: 250px;
+    top: 200px;
     right: 100px;
     cursor: pointer;
     border-radius: 10px;

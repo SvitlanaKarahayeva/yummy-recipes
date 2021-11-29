@@ -12,7 +12,9 @@
     }
 
 .registerTitle{
-    font-size: 50px;
+    font-size: 40px;
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Fredoka One', cursive;
 }
 
 .registerForm{
@@ -22,6 +24,7 @@
 }
 
 .registerForm > label{
+    font-family: 'Comfortaa', cursive;
     margin: 10px 0;
 }
 

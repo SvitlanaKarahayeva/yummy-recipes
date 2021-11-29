@@ -35,11 +35,11 @@ class RegisterForm extends Component{
                 <form className="registerForm" onSubmit={this.handleSubmit}>
                     <span className="registerTitle"> Registration form</span>
                     
-                    <label>Username</label>
+                    <label>Name</label>
                     <input 
                         className="registerInput" 
                         type="text" 
-                        placeholder="Enter unique username" 
+                        placeholder="Enter your name" 
                         name="name"
                         onChange={this.handleChange}
                     />
