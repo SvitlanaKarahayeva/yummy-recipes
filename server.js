@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
-
+const cors = require('cors')
 require('dotenv').config()
 require('./config/database') 
 
@@ -17,6 +17,10 @@ app.use(express.json());
 
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 
+
+app.use(cors({
+    origin: '*'
+  }))
 
 app.use('/api/recipes', recipesRouter)
 app.use('/api/users', usersRouter)

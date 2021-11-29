@@ -1,19 +1,39 @@
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
 // Componenets
 import NavigationBar from '../../components/Navbar/Navbar';
 import OnlineRecipePage from '../../components/OnlineRecipePage/OnlineRecipePage';
 import LoginPage from '../LoginPage/LoginPage';
-import Register from '../Register/Register'
+import RegisterPage from '../RegisterPage/RegisterPage'
 
 
 function App () {
-
+  
     return (
-      <div>
+      <Router>
         <NavigationBar />
-        <h1>Main Page</h1>
-       
-       <Register /> 
-      </div>
+        <Switch>
+          
+          <Route exact path="/login">
+            <LoginPage />
+          </Route>
+
+          <Route exact path="/register">
+            <RegisterPage />
+          </Route>
+
+          <Route exact path="/onlinerecipes">
+            <OnlineRecipePage />
+          </Route>
+          
+        
+        </Switch>     
+      </Router>
+      
     )
   }
 

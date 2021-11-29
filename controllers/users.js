@@ -2,7 +2,7 @@ const User = require('../models/user')
 const jwt = require('jsonwebtoken')
 const SECRET = process.env.SECRET
 
-async function signup(req, res){
+async function register(req, res){
     //create ans instance of user model with data from req.body
     let  user = new User(req.body)
     try{
@@ -26,5 +26,5 @@ function createJWT(user){
 }
 
 module.exports = {
-    signup,
+    register,
 }

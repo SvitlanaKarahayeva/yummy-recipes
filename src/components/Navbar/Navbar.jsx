@@ -14,15 +14,16 @@ function NavigationBar() {
                 <Nav.Link href="#pricing">Login</Nav.Link>
                 <Nav.Link href="#pricing">Logout</Nav.Link>
                 <NavDropdown title="Find your Yummies" id="collasible-nav-dropdown">
-                    <NavDropdown.Item href="#action/3.1">Online Yummies</NavDropdown.Item>
-                    <NavDropdown.Item href="#action/3.2">Grandma action</NavDropdown.Item>
+                    <NavDropdown.Item href="/onlinerecipes">Online Yummies</NavDropdown.Item>
+                    <NavDropdown.Item href="/grandmarecipes">Grandma Yummies</NavDropdown.Item>
                     <NavDropdown.Item href="#action/3.3">Youtube Yummies</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
             </NavDropdown>
           </Nav>
           <Nav>
-                <Nav.Link href="#deets">More deets</Nav.Link>
+                <Nav.Link href="/login">Login</Nav.Link>
+                <Nav.Link href="/register">Register</Nav.Link>
                 <Nav.Link eventKey={2} href="#memes">
                 Dank memes
                     </Nav.Link>
