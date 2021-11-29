@@ -6,7 +6,6 @@ const cors = require('cors')
 require('dotenv').config()
 require('./config/database') 
 
-// ROUTES
 const recipesRouter = require("./routes/recipes")
 const usersRouter = require('./routes/users')
 
