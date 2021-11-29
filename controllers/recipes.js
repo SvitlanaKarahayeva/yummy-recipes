@@ -1,5 +1,3 @@
-
-
 function index(req, res) {
     console.log("EXPRESS server is running on receipes index page")
     let recipes = [1,2,3,4]
