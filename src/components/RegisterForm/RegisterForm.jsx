@@ -25,7 +25,7 @@ class RegisterForm extends Component{
         try {
             await userService.register(this.state);
             this.props.handleRegisterOrLogin()
-        //redirect to the home page after login
+        //redirect to the home page after registration
             console.log(this.props)
             this.props.history.push('/')
         } catch (err) {
