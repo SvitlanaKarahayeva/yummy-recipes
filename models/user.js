@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const SALT_ROUNDS = 6
 
@@ -16,7 +16,7 @@ const userSchema = new mongoose.Schema(
         password: String
     },
     {timestamps: true}
-)
+);
 
 //remove password when serilizing the data
 userSchema.set('toJSON', {
@@ -24,7 +24,7 @@ userSchema.set('toJSON', {
         delete ret.password
         return ret
     }
-})
+});
 
 // pre middleware to hash the user password
 userSchema.pre('save', function(next){
@@ -35,7 +35,7 @@ userSchema.pre('save', function(next){
         user.password = hash
         next()
     })
-})
+});
 
 // compare passwords
 userSchema.methods.comparePassword = function(tryPassword, cb){
@@ -43,7 +43,7 @@ userSchema.methods.comparePassword = function(tryPassword, cb){
         if(err) return cb(err)
         cb(null, isMatch)
     })
-}
+};
 
 
 module.exports = mongoose.model('User', userSchema);
