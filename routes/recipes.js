@@ -6,10 +6,12 @@ const recipesCtrl = require('../controllers/recipes')
 // router.get('/', recipesCtrl.index)
 // /* GET one recipe */
 // router.get('/', recipesCtrl.index)
+
 /* CREATE new recipe */
 router.post('/create', recipesCtrl.createRecipe)
-/* UPDATE recipe */
 
+/* UPDATE recipe */
+router.put('/update/:id', recipesCtrl.updateRecipe)
 /* DELETE recipe */
 
 module.exports = router
