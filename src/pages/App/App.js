@@ -12,6 +12,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import HomePage from "../HomePage/HomePage";
 import userService from "../../services/userService";
+import ProtectedRoute from "../../components/ProtectedRoute/ProtectedRoute"
 
 
 class App extends Component {
@@ -63,9 +64,8 @@ class App extends Component {
             }
           />
 
-          <Route exact path="/onlinerecipes">
-            <OnlineRecipePage />
-          </Route>
+          <ProtectedRoute exact path="/onlinerecipes" component={OnlineRecipePage}/>
+           
           
         
         </Switch>     
