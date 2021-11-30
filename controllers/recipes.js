@@ -1,5 +1,6 @@
 const Recipe = require('../models/recipe')
 const User = require('../models/user')
+const { post } = require('../routes/recipes')
 
 async function createRecipe(req, res){
     const newRecipe = new Recipe(req.body)
@@ -35,8 +36,33 @@ async function updateRecipe(req, res){
     }
 }
 
+/* DELETE recipe */
+// only the owner of the recipe is allowed to do it
+async function deleteRecipe(req, res){
+    try{
+         const recipe = await Recipe.findById(req.params.id)
+         //  validating the user
+         if(recipe.userEmail === req.body.userEmail){
+            
+            try{
+                const deletedRecipe = await Recipe.findByIdAndDelete(req.params.id)
+                res.status(200).json("Recipe has been deleted")
+            }catch(err){
+                res.status(401).json(err)
+            }
+            
+         }else{
+             res.status(401).json("You can delete only your recipe")
+         }
+         
+    }catch(err){
+        res.status(401).json(err)
+    }
+}
+
 
 module.exports = {
     createRecipe,
-    updateRecipe
+    updateRecipe,
+    deleteRecipe
 }
