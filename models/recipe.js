@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const bcrypt = require('bcrypt')
+const mongoose = require('mongoose');
+const bcrypt = require('bcrypt');
 
 const recipeSchema = new mongoose.Schema(
     {
@@ -26,6 +26,6 @@ const recipeSchema = new mongoose.Schema(
         }
 
     }, { timestamps: true }
-)
+);
 
 module.exports = mongoose.model('Recipe', recipeSchema);

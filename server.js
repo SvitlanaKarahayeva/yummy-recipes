@@ -2,12 +2,14 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
-const cors = require('cors')
-require('dotenv').config()
-require('./config/database') 
+const cors = require('cors');
+require('dotenv').config();
+require('./config/database');
 
-const recipesRouter = require("./routes/recipes")
-const usersRouter = require('./routes/users')
+const usersRouter = require('./routes/users');
+const recipesRouter = require("./routes/recipes");
+const categoriesRouter = require('./routes/categories');
+
 
 const app = express();
 
@@ -19,16 +21,13 @@ app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 
 app.use(cors({
     origin: '*'
-  }))
+  }));
 
-app.use('/api/recipes', recipesRouter)
-app.use('/api/users', usersRouter)
-
-
+app.use('/api/users', usersRouter);
+app.use('/api/recipes', recipesRouter);
+app.use('/api/categories', categoriesRouter);
 
 app.use(express.static(path.join(__dirname, 'build')));
-
-// Put API routes here, before the "catch all" route
 
 
 // The following "catch all" route (note the *)is necessary
@@ -41,4 +40,4 @@ app.get('/*', function(req, res) {
 
   app.listen(port, function(){
       console.log(`Express app running on port ${port}`)
-  })
+  });

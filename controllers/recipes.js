@@ -15,7 +15,7 @@ async function index(req, res){
             recipes = await Recipe.find({userEmail: userEmail})
         } else if(category){
              recipes = await Recipe.find({categories: {
-                //  chacking if chosen category (the word) matches any from categories
+                //  chacking if chosen category  matches any from exhisting categories
                  $in:[category]
              }})
             //  if no matches return all posts
