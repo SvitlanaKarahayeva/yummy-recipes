@@ -40,7 +40,7 @@ async function login(req, res){
     }
 }
 
-// helper function
+// creates json web token
 function createJWT(user){
     return jwt.sign(
         {user},

@@ -6,17 +6,17 @@ const recipeSchema = new mongoose.Schema(
         title: {
             type: String,
             required: true,
-            unique
+            unique: true
         },
         description: {
-            type:string,
+            type: String,
             required: true
         },
         image: {
             type: String,
             required: false
         },
-        username: {
+        userEmail: {
             type: String,
             required: true
         },
