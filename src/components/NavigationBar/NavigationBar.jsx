@@ -6,6 +6,7 @@ function NavigationBar(props) {
     // ternary operatior: if user is logged in show 1st block, if not- show 2nd block
    
     let nav = props.currentUser ?
+    
         // First block
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
@@ -55,6 +56,7 @@ function NavigationBar(props) {
      
 
     return (
+        
         <div className='NavBar'>
             {nav}
         </div>
