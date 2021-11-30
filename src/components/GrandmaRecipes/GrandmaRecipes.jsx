@@ -1,3 +1,4 @@
+import GrandmaRecipe from '../GrandmaRecipe/GrandmaRecipe';
 import './GrandmaRecipes.css'
 
 function GrandmaRecipes() {
@@ -11,10 +12,13 @@ function GrandmaRecipes() {
                     alt="" 
                 />
                 <h1 className="gmRecipesHeaderName">Grandma Recipes</h1>
-            </div>
-
-            
-         
+            </div> 
+            <GrandmaRecipe />
+            <GrandmaRecipe />
+            <GrandmaRecipe />
+            <GrandmaRecipe />
+            <GrandmaRecipe />
+            <GrandmaRecipe />
         </div>
     )
 }
