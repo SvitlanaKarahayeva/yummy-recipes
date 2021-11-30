@@ -1,7 +1,34 @@
 const Recipe = require('../models/recipe')
 const User = require('../models/user')
-const { post } = require('../routes/recipes')
 
+
+/* GET all recipe  */
+// all posts return if queries are not matched/specified
+// 2 query searches: by email and by category
+async function index(req, res){
+    const userEmail = req.query.user
+    const category = req.query.cat
+    try{
+        // finding by userEmail and category name first
+        let recipes;
+        if(userEmail){
+            recipes = await Recipe.find({userEmail: userEmail})
+        } else if(category){
+             recipes = await Recipe.find({categories: {
+                //  chacking if chosen category (the word) matches any from categories
+                 $in:[category]
+             }})
+            //  if no matches return all posts
+        } else{
+            recipes = await Recipe.find()
+        }
+        res.status(200).json(recipes)
+    }catch(err){
+
+    }
+}
+
+/* CREATE recipe */
 async function createRecipe(req, res){
     const newRecipe = new Recipe(req.body)
     try{
@@ -62,6 +89,7 @@ async function deleteRecipe(req, res){
 
 
 module.exports = {
+    index,
     createRecipe,
     updateRecipe,
     deleteRecipe
