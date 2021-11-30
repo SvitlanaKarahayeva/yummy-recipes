@@ -26,10 +26,17 @@ class App extends Component {
     this.setState({ user: userService.getUser() })
   }
 
+  handleLogout = () => {
+    this.setState({ user: userService.logout()})
+  };
+
   render(){
     return (
       <Router>
-        <NavigationBar currentUser= {this.state.user} />
+        <NavigationBar 
+          currentUser= {this.state.user} 
+          handleLogout={this.handleLogout}
+        />
         <Switch>
           
         <Route exact path="/">

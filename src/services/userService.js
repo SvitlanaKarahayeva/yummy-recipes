@@ -31,9 +31,9 @@ function login(credentials){
     .then( ({token}) => tokenService.setToken(token))
 }
 
-// function logout(){
-//     tokenService.removeToken();
-// } 
+function logout(){
+    tokenService.removeToken();
+} 
 
 // 
 function getUser() {
@@ -43,6 +43,6 @@ function getUser() {
 export default {
     register,
     login,
-    // logout,
+    logout,
     getUser
 }

@@ -19,9 +19,10 @@ function getToken(){
     return token
 }
 
-// function removeToken() {
-//     localStorage.removeItem('token');
-//   }
+// used to log out the user, called in userServices function logout
+function removeToken() {
+    localStorage.removeItem("token");
+  }
 
 function getUserFromToken(){
     const token = getToken()
@@ -33,6 +34,6 @@ function getUserFromToken(){
 export default {
     setToken,
     getToken,
-    // removeToken,
+    removeToken,
     getUserFromToken
 }
