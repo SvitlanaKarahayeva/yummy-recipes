@@ -25,7 +25,7 @@ function NavigationBar(props) {
 
                     <Nav>
                         <Nav.Link href="#memes"><span>Welcome, {props.currentUser.name}</span></Nav.Link>
-                        <Nav.Link href="/logout">Logout</Nav.Link>
+                        <Nav.Link href="/" onClick={props.handleLogout}>Logout</Nav.Link>
                     </Nav>
                     
                 </Navbar.Collapse>
