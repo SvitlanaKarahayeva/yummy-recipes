@@ -1,0 +1,33 @@
+.categories{
+    flex: 3;
+    margin: 25px;
+    padding-bottom: 30px;
+    background-color: #fdfbfb;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.catTitle{
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Fredoka One', cursive;
+    margin: 10px;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+.categoryItems{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.categoryList > li{
+    list-style: none;
+    margin-bottom: 5px;
+    font-family: 'Lora', serif;
+    display: inline-block;
+    width: 50%;
+    cursor: pointer;
+}

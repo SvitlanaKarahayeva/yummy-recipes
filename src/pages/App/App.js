@@ -13,6 +13,7 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import HomePage from "../HomePage/HomePage";
 import userService from "../../services/userService";
 import ProtectedRoute from "../../components/ProtectedRoute/ProtectedRoute"
+import GrandmaRecipePage from "../GrandmaRecipePage/GrandmaRecipePage";
 
 
 class App extends Component {
@@ -65,6 +66,7 @@ class App extends Component {
           />
 
           <ProtectedRoute exact path="/onlinerecipes" component={OnlineRecipePage}/>
+          <ProtectedRoute exact path="/grandmarecipes" component={GrandmaRecipePage}/>
            
           
         
