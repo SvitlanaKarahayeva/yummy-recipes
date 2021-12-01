@@ -49,6 +49,8 @@ function createJWT(user){
     )
 }
 
+// GET all users
+
 module.exports = {
     register,
     login
