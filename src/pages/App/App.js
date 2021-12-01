@@ -15,6 +15,7 @@ import userService from "../../services/userService";
 import ProtectedRoute from "../../components/ProtectedRoute/ProtectedRoute"
 import GrandmaRecipePage from "../GrandmaRecipePage/GrandmaRecipePage";
 import GrandmaRecipeDetails from "../../components/GrandmaRecipeDetails/GrandmaRecipeDetails";
+import GrandmaRecipeCreatePage from "../GrandmaRecipeCreatePage/GrandmaRecipeCreatePage";
 
 
 class App extends Component {
@@ -46,6 +47,13 @@ class App extends Component {
             <HomePage />
           </Route>
 
+          <Route exact path="/createrecipe">
+            <GrandmaRecipeCreatePage />
+          </Route>
+          
+
+
+        {/* infividual recipe detsail */}
           {/* <Route exact path="/">
             <GrandmaRecipeDetails />
           </Route> */}
