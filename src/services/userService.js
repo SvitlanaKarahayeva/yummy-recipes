@@ -40,9 +40,11 @@ function getUser() {
     return tokenService.getUserFromToken();
   }
 
-export default {
+const userServicesExports = {
     register,
     login,
     logout,
     getUser
 }
+
+export default userServicesExports

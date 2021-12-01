@@ -2,7 +2,7 @@ import GrandmaRecipe from '../GrandmaRecipe/GrandmaRecipe';
 import {Link} from 'react-router-dom'
 import './GrandmaRecipes.css'
 
-function GrandmaRecipes() {
+function GrandmaRecipes(props) {
     return (
   
         <div className="gmRecipes">
@@ -22,12 +22,11 @@ function GrandmaRecipes() {
                     </Link>
                 </div>
             </div> 
-            <GrandmaRecipe />
-            <GrandmaRecipe />
-            <GrandmaRecipe />
-            <GrandmaRecipe />
-            <GrandmaRecipe />
-            <GrandmaRecipe />
+            {/* mapping through recipes list from db */}
+            { props.recipes.map(recipe =>( 
+                <GrandmaRecipe recipe={recipe}/> 
+                )) 
+            }        
         </div>
     )
 }

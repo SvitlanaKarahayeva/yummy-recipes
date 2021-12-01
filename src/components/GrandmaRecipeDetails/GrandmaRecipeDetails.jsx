@@ -9,6 +9,6 @@ function GrandmaRecipeDetails() {
           <Categories />  
         </div>
     )
-}
+} 
 
 export default GrandmaRecipeDetails

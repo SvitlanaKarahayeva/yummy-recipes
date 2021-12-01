@@ -1,6 +1,5 @@
 import React from 'react';
 import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
-import { NavLink } from "react-router-dom";
 
 function NavigationBar(props) {
     // ternary operatior: if user is logged in show 1st block, if not- show 2nd block

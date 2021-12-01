@@ -1,6 +1,9 @@
 import './GrandmaRecipeCreatePage.css'
 
+
 function GrandmaRecipeCreatePage() {
+    
+
     return (
         <div className="gmRecipeCreate">
                 <form className="gmRecipeCreateForm">

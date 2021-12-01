@@ -31,9 +31,10 @@ function getUserFromToken(){
     return token ? JSON.parse(atob(token.split('.')[1])).user : null
 }
 
-export default {
+const tokenServicesExports = {
     setToken,
     getToken,
     removeToken,
     getUserFromToken
 }
+export default tokenServicesExports;
