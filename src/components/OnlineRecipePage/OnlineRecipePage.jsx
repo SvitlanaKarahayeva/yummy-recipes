@@ -1,15 +1,15 @@
 import React, { useEffect, useState} from 'react';
 
 import { InputGroup, FormControl, Button } from "react-bootstrap";
-import { getORecipes } from '../../services/recipes';
-import OnlineRecipeSearch from '../OnlineRecipeSearch/OnlineRecipeSearch';
-import OnlineRecipeList from '../OnlineRecipeList/OnlineRecipeList';
-import OnlineRecipe from '../OnlineRecipe/OnlineRecipe';
+// import { getORecipes } from '../../services/recipes';
+// import OnlineRecipeSearch from '../OnlineRecipeSearch/OnlineRecipeSearch';
+// import OnlineRecipeList from '../OnlineRecipeList/OnlineRecipeList';
+// import OnlineRecipe from '../OnlineRecipe/OnlineRecipe';
 import axios from 'axios';
 
 
 function OnlineRecipePage() {
-    const [recipes, setRecipes] = useState([])
+    // const [recipes, setRecipes] = useState([])
     // const [search, setSearch] = useState('')
     // const [query, setQuery] = useState('')
    
@@ -25,7 +25,7 @@ function OnlineRecipePage() {
     useEffect ( () => {
         getORecipes()
         .then( data  => {
-            console.log(data.data.hits)
+            // console.log(data.data.hits)
         })   
     }, [])
 

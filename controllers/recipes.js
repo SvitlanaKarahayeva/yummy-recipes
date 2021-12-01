@@ -87,10 +87,9 @@ async function deleteRecipe(req, res){
     }
 }
 
-
 module.exports = {
     index,
     createRecipe,
     updateRecipe,
-    deleteRecipe
+    deleteRecipe,
 }

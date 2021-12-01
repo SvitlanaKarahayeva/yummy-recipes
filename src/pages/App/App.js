@@ -54,9 +54,9 @@ class App extends Component {
 
 
         {/* infividual recipe detsail */}
-          {/* <Route exact path="/">
+          <Route exact path="/recipes/id">
             <GrandmaRecipeDetails />
-          </Route> */}
+          </Route>
 
           <Route path='/login' 
           render=
