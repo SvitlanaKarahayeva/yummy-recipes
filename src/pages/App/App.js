@@ -47,14 +47,14 @@ class App extends Component {
             <HomePage />
           </Route>
 
-          <Route exact path="/createrecipe">
+          <Route exact path="/create">
             <GrandmaRecipeCreatePage />
           </Route>
           
 
 
         {/* infividual recipe detsail */}
-          <Route exact path="/recipes/id">
+          <Route exact path="/recipes/:id">
             <GrandmaRecipeDetails />
           </Route>
 

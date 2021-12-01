@@ -17,8 +17,8 @@ function GrandmaRecipes(props) {
                 
                 <div className="gmRecipesAddDiv">
                     <Link to='/create'>
-                    <i className="gmRecipesAddIcon far fa-plus-square"></i> 
-                    <span className="gmRecipesAddSign"><b>Add New Yummy</b></span>
+                        <i className="gmRecipesAddIcon far fa-plus-square"></i> 
+                        <span className="gmRecipesAddSign"><b>Add New Yummy</b></span>
                     </Link>
                 </div>
             </div> 
