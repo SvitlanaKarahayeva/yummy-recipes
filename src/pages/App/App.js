@@ -14,6 +14,7 @@ import HomePage from "../HomePage/HomePage";
 import userService from "../../services/userService";
 import ProtectedRoute from "../../components/ProtectedRoute/ProtectedRoute"
 import GrandmaRecipePage from "../GrandmaRecipePage/GrandmaRecipePage";
+import GrandmaRecipeDetails from "../../components/GrandmaRecipeDetails/GrandmaRecipeDetails";
 
 
 class App extends Component {
@@ -44,6 +45,10 @@ class App extends Component {
         <Route exact path="/">
             <HomePage />
           </Route>
+
+          {/* <Route exact path="/">
+            <GrandmaRecipeDetails />
+          </Route> */}
 
           <Route path='/login' 
           render=

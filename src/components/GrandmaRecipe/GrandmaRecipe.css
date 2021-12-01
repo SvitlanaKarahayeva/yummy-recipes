@@ -18,8 +18,25 @@
 .gmRecipeCategory > span{
     font-family: 'Varela Round', sans-serif;
     font-size: 12px;
-    color: rgb(48, 48, 104);
+    color: #999;
     margin-top: 10x;
     margin-right: 7px;
     cursor: pointer;
+}
+
+.gmRecipeTitle{
+    font-style: italic;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.gmRecipeDescription{
+    font-size: 14px;
+    /* helps to shoe only 3 line of the description */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
 }
