@@ -5,8 +5,8 @@ import GrandmaRecipeOne from '../GrandmaRecipeOne/GrandmaRecipeOne'
 function GrandmaRecipeDetails() {
     return (
         <div className="gmRecDetails">
-           <GrandmaRecipeOne />
-          <Categories />  
+            <GrandmaRecipeOne />
+            <Categories />  
         </div>
     )
 } 

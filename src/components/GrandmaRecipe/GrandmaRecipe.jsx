@@ -16,7 +16,7 @@ function GrandmaRecipe(props) {
 
             <div className="gmRecipeInfo">
                 <div className="gmRecipeCategory">
-                    {  props.recipe.categories.map( cat => (
+                    {  props.recipe.categories.map( (cat, key) => (
                         <span> {cat.name} </span>
                         ))
                     }

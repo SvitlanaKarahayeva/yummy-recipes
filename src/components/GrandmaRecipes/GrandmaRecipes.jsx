@@ -23,8 +23,8 @@ function GrandmaRecipes(props) {
                 </div>
             </div> 
             {/* mapping through recipes list from db */}
-            { props.recipes.map(recipe =>( 
-                <GrandmaRecipe recipe={recipe}/> 
+            { props.recipes.map((recipe, idx) =>( 
+                <GrandmaRecipe key={idx} recipe={recipe}/> 
                 )) 
             }        
         </div>

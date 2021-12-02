@@ -1,12 +1,10 @@
 import './GrandmaRecipeOne.css'
-
-
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router'
 import recipeService from '../../services/recipeService';
-import axios from 'axios'
 
-function GrandmaRecipeOne() {
+
+function GrandmaRecipeOne(props) {
 
     // gives access to the query params or the complete route string.
     const location = useLocation()
@@ -15,6 +13,7 @@ function GrandmaRecipeOne() {
     // console.log(id) 
 
     const [recipe, setRecipe] = useState([])
+    const [user, setUser] = useState(props.currentUser)
     
 
     useEffect(() => {
@@ -40,14 +39,23 @@ function GrandmaRecipeOne() {
                     <span>Lunch</span>
                     <span>Breakfast</span>
                 </div>
-            <div className="gmRecOneIcons">
-                <i className="gmRecOneEdit fas fa-user-edit"></i>
-                <i className="gmRecOneDelete fas fa-trash-alt"></i>
 
-            </div>
+
+                <div className="gmRecOneIcons">
+                    <i className="gmRecOneEdit fas fa-user-edit"></i>
+                    <i className="gmRecOneDelete fas fa-trash-alt"></i>
+
+                </div>
                 <span className="gmRecOneTitle">{recipe.title}</span>
-                <hr />       
+                
+                
+                <div className="gmRecOneEmail">
+                    <span>Contact author: <i className="fas fa-envelope"></i> <b>{recipe.userEmail}</b></span>
+                </div>    
             </div>
+            <hr/>
+            
+           
             <div className="gmRecOneDescription">  
                 <p>{recipe.description}</p>
             </div>  
