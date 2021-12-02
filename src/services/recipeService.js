@@ -22,8 +22,19 @@ const  getGrandmaRecipes = () => {
   catch(err) { console.log("Error accured", err) } 
 }
 
+// Get One recipe from database
+
+
+const getOneGrandmaRecipe = (id) => {
+    try{
+      let response = axios.get('/recipes/' + id);
+      return response
+    } catch(err){ console.log("Error accured", err) } 
+}
+
 const recipesServicesExports = {
   getGrandmaRecipes,
+  getOneGrandmaRecipe
 }
 
 export default recipesServicesExports;

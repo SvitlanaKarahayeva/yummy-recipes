@@ -40,3 +40,8 @@
     -webkit-box-orient: vertical;
 
 }
+
+.link{
+    text-decoration: none;
+    color: inherit;
+  }
