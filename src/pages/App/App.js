@@ -53,7 +53,7 @@ class App extends Component {
           
 
 
-        {/* infividual recipe detsail */}
+        {/* individual recipe detail */}
           <Route exact path="/recipes/:id">
             <GrandmaRecipeDetails />
           </Route>
@@ -78,8 +78,18 @@ class App extends Component {
             }
           />
 
+          <Route exact path="/grandmarecipes" 
+            render=
+            {
+              ({ history }) => 
+                <GrandmaRecipePage 
+                  history={history} 
+                  currentUser= {this.state.user}  />
+            }
+          />      
+
           <ProtectedRoute exact path="/onlinerecipes" component={OnlineRecipePage}/>
-          <ProtectedRoute exact path="/grandmarecipes" component={GrandmaRecipePage}/>
+          
            
           
         
