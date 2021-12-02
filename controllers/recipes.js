@@ -28,6 +28,16 @@ async function index(req, res){
     }
 }
 
+/* GET One recipe */
+async function getOneRecipe(req, res){
+    try{
+        const recipe = await Recipe.findById(req.params.id)
+        res.status(200).json(recipe)
+    }catch(err){
+        res.status(401).json(err)
+    }
+}
+
 /* CREATE recipe */
 async function createRecipe(req, res){
     const newRecipe = new Recipe(req.body)
@@ -89,6 +99,7 @@ async function deleteRecipe(req, res){
 
 module.exports = {
     index,
+    getOneRecipe,
     createRecipe,
     updateRecipe,
     deleteRecipe,

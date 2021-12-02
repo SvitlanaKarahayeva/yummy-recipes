@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import './GrandmaRecipe.css'
 
 function GrandmaRecipe(props) {
+
     return (
         <div className="gmRecipe">
             { props.recipe.image && (
@@ -21,8 +22,8 @@ function GrandmaRecipe(props) {
                     }
                   
                 </div>
-                <Link to={`recipes/${props.recipe._id}`}>
-                    <span className="gmRecipeTitle"> {props.recipe.title} </span>
+                <Link to={`recipes/${props.recipe._id}`} className="link">
+                    <span className="gmRecipeTitle link"> {props.recipe.title} </span>
                 </Link>
                 <hr />       
             </div>    
