@@ -32,9 +32,20 @@ const getOneGrandmaRecipe = (id) => {
     } catch(err){ console.log("Error accured", err) } 
 }
 
+
+const createGrandmaRecipe = (newRecipe) => {
+  try{
+    const res = axios.post('/recipes/create', newRecipe)
+
+ }catch(error){
+     console.log(error)
+ }
+}
+
 const recipesServicesExports = {
   getGrandmaRecipes,
-  getOneGrandmaRecipe
+  getOneGrandmaRecipe,
+  createGrandmaRecipe
 }
 
 export default recipesServicesExports;

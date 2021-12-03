@@ -1,6 +1,7 @@
 import axios from 'axios'
 import {useState} from 'react'
 import { useHistory } from 'react-router-dom'
+import recipeService from '../../services/recipeService';
 import './GrandmaRecipeCreatePage.css'
 
 
@@ -14,6 +15,7 @@ function GrandmaRecipeCreatePage(props) {
     const [categories, setCategories] = useState('')
     const history = useHistory()
     
+
     
      const handleSubmit = async (event) => {
         event.preventDefault();
@@ -26,7 +28,7 @@ function GrandmaRecipeCreatePage(props) {
             
         }
         try{
-           const res = await axios.post('/recipes/create', newRecipe)
+           const res = recipeService.createGrandmaRecipe(newRecipe)
            history.push('/recipes')
 
         }catch(error){
