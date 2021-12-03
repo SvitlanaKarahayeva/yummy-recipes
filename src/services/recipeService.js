@@ -14,9 +14,9 @@ import axios from "axios";
 // Get All recipes from database
 // proxy url (here is '/') is added in package.json: "proxy": "http://localhost:3001/api/"
   
-const  getGrandmaRecipes = () => {
+const  getGrandmaRecipes = (search) => {
   try{
-    let response = axios.get('/recipes')
+    let response = axios.get('/recipes' + search)
     return response
   }
   catch(err) { console.log("Error accured", err) } 

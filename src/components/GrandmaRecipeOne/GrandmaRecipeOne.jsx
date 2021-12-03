@@ -1,7 +1,9 @@
 import './GrandmaRecipeOne.css'
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router'
+import { Link } from 'react-router-dom'
 import recipeService from '../../services/recipeService';
+
 
 
 function GrandmaRecipeOne(props) {
@@ -50,7 +52,11 @@ function GrandmaRecipeOne(props) {
                 
                 
                 <div className="gmRecOneEmail">
-                    <span>Contact author: <i className="fas fa-envelope"></i> <b>{recipe.userEmail}</b></span>
+                    <span>Author: 
+                        <Link to={`/recipes?userEmail=${recipe.userEmail}`} className="link">
+                            <i className="fas fa-envelope"></i> <b>{recipe.userEmail}</b>
+                        </Link>
+                    </span>
                 </div>    
             </div>
             <hr/>

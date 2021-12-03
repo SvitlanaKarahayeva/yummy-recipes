@@ -78,7 +78,7 @@ class App extends Component {
             }
           />
 
-          <Route exact path="/grandmarecipes" 
+          <Route exact path="/recipes" 
             render=
             {
               ({ history }) => 
