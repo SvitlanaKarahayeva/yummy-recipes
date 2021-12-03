@@ -6,8 +6,8 @@ const User = require('../models/user')
 // all posts return if queries are not matched/specified
 // 2 query searches: by email and by category
 async function index(req, res){
-    const userEmail = req.query.user
-    const category = req.query.cat
+    const userEmail = req.query.userEmail
+    const category = req.query.category
     try{
         // finding by userEmail and category name first
         let recipes;
@@ -15,7 +15,7 @@ async function index(req, res){
             recipes = await Recipe.find({userEmail: userEmail})
         } else if(category){
              recipes = await Recipe.find({categories: {
-                //  chacking if chosen category  matches any from exhisting categories
+                //  checking if chosen category  matches any from exhisting categories
                  $in:[category]
              }})
             //  if no matches return all posts

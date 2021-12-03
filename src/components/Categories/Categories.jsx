@@ -1,5 +1,5 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'
 import categoryService from '../../services/categoryService';
 import "./Categories.css"
 
@@ -21,7 +21,9 @@ function Categories() {
             <div className="categoryItems">
                 <ul className="categoryList">
                     { categories.map( (cat, idx) => (
-                        <li key={idx}>{ cat.name }</li>
+                        <Link to={`/recipes?category=${cat.name}`}>
+                            <li key={idx}>{ cat.name }</li>
+                        </Link>
                     ))}
                 </ul>
             </div>
