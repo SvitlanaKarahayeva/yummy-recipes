@@ -1,4 +1,3 @@
-import axios from 'axios'
 import {useState} from 'react'
 import { useHistory } from 'react-router-dom'
 import recipeService from '../../services/recipeService';
@@ -60,7 +59,7 @@ function GrandmaRecipeCreatePage(props) {
                         type="text" 
                         placeholder="Add your image url"
                         name="image"
-                        onChange={(e) => setImage(e.target.value.toLowerCase())}    
+                        onChange={(e) => setImage(e.target.value)}    
 
                     />
                     
