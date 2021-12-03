@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './RegisterForm.css';
-import userService from '../../services/userService'
+import { Link } from 'react-router-dom';
+import userService from '../../services/userService';
 
 class RegisterForm extends Component{
     constructor(props){
@@ -78,8 +79,12 @@ class RegisterForm extends Component{
                     <button className="registerButton">Register</button>
                 
                 </form>
+                
                 <span className="registerLoginSpan">If you have an account</span>
-                <button className="registerLoginButton">Login</button>
+                <Link to="/login">
+                    <button className="registerLoginButton">Login</button>
+                </Link>
+                
             </div>
         )
     }

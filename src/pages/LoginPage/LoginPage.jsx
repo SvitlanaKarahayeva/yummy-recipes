@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import userService from '../../services/userService';
 import './LoginPage.css';
 
@@ -58,8 +59,11 @@ class LoginPage extends Component {
 
                     <button className="loginButton">Login</button>
                 </form>
+                
                 <span className="loginRegSpan">Dont have an account?</span>
-                <button className="loginRegisterButton">Register</button>
+                <Link to="/register">
+                    <button className="loginRegisterButton">Register</button>
+                </Link>
             </div>
         )
     }

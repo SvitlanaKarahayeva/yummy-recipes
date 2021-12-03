@@ -1,5 +1,6 @@
 import axios from "axios";
 
+// Fetching 3rd party api for Online Recipes
 // // GET recipes from mealdb API
 // export const getOnlineRecipes =  () => {
 //     try{
@@ -9,11 +10,13 @@ import axios from "axios";
 //     catch(error) { console.log("Error accured", error) }    
 //   }
 
-/* GRANDMA recipes services */
 
-// Get All recipes from database
-// proxy url (here is '/') is added in package.json: "proxy": "http://localhost:3001/api/"
-  
+
+/* ---------------------------------------- */
+
+// Get All recipes from MongoDB
+// proxy url (here is '/') is added to package.json: "proxy": "http://localhost:3001/api/"
+// called in GrandmaRecipePage
 const  getGrandmaRecipes = (search) => {
   try{
     let response = axios.get('/recipes' + search)

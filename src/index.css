@@ -22,4 +22,8 @@ code {
   box-shadow: 5px 10px #888888
 }
 
+.link{
+  text-decoration: none;
+  color: inherit;
+}
 

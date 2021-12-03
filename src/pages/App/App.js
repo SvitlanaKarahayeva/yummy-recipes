@@ -6,12 +6,12 @@ import {
 import { Component } from 'react'
 
 // Componenets
+import userService from "../../services/userService";
 import NavigationBar from '../../components/NavigationBar/NavigationBar';
 import OnlineRecipePage from '../../components/OnlineRecipePage/OnlineRecipePage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import HomePage from "../HomePage/HomePage";
-import userService from "../../services/userService";
 import ProtectedRoute from "../../components/ProtectedRoute/ProtectedRoute"
 import GrandmaRecipePage from "../GrandmaRecipePage/GrandmaRecipePage";
 import GrandmaRecipeDetails from "../../components/GrandmaRecipeDetails/GrandmaRecipeDetails";
@@ -46,23 +46,26 @@ class App extends Component {
         <Route exact path="/">
             <HomePage />
           </Route>
-          <Route exact path="/recipes/create" 
-            render=
-            {
-              ({ history }) => 
-                <GrandmaRecipeCreatePage 
-                  // history={history} 
-                  currentUser= {this.state.user}  />
-            }
-          />
-          
 
+  {/* ------------GRANDMA RECIPES-------------- */}
 
-        {/* individual recipe detail */}
-          <Route exact path="/recipes/:id">
-            <GrandmaRecipeDetails 
-              currentUser= {this.state.user} />
-          </Route>
+             {/* Create Recipe */}
+        <ProtectedRoute exact path="/recipes/create"> 
+              <GrandmaRecipeCreatePage currentUser= {this.state.user}  />
+        </ProtectedRoute>
+        
+        {/* All recipes */}
+        <ProtectedRoute exact path="/recipes">
+              <GrandmaRecipePage currentUser= {this.state.user} />    
+        </ProtectedRoute>  
+        
+        
+         {/* individual recipe detail */}
+          <ProtectedRoute exact path="/recipes/:id">
+            <GrandmaRecipeDetails currentUser= {this.state.user} />
+          </ProtectedRoute>
+
+  {/* ------------LOGIN and REGISTRATION-------------- */}
 
           <Route path='/login' 
           render=
@@ -84,26 +87,14 @@ class App extends Component {
             }
           />
 
-          <Route exact path="/recipes" 
-            render=
-            {
-              ({ history }) => 
-                <GrandmaRecipePage 
-                  history={history} 
-                  currentUser= {this.state.user}  />
-            }
-          />      
+    {/* ------------ONLINE RECIPES in production-------------- */}
 
           <ProtectedRoute exact path="/onlinerecipes" component={OnlineRecipePage}/>
-          
-           
-          
-        
+
         </Switch>     
       </Router> 
     )
   }
-  
     
 }
 
