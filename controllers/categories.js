@@ -23,8 +23,6 @@ async function createCategory(req, res){
 };
 
 
-
-
 module.exports = {
     index,
     createCategory,

@@ -4,7 +4,6 @@ import Categories from '../../components/Categories/Categories'
 import recipeService from '../../services/recipeService';
 import { useLocation } from 'react-router';
 import './GrandmaRecipePage.css'
-import axios from 'axios';
 
 
 function GrandmaRecipePage() {
@@ -12,17 +11,8 @@ function GrandmaRecipePage() {
     
     // query
     const {search} = useLocation()
-    // search is a property from location, gives the query string info, in this case: userEmail=svetlana@gmail.com what I put after ? 
+    // search is a property from location, gives the query string info, in this case: userEmail=svetlana@gmail.com what I put after "?" sign"
    
-
-    // useEffect(() => {
-    //     async function fetchRecipes(){
-    //         let res =  await axios.get('/recipes' + search )
-    //         // console.log(res)
-    //         setRecipes(res.data)
-    //     }
-    //     fetchRecipes()
-    // }, [search])
     
     useEffect(() => {
         async function fetchData(){
