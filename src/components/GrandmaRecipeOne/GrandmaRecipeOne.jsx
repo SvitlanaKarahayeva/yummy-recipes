@@ -1,32 +1,53 @@
 import './GrandmaRecipeOne.css'
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router'
-import { Link } from 'react-router-dom'
+
+import { Link, useHistory } from 'react-router-dom'
 import recipeService from '../../services/recipeService';
+import axios from 'axios';
 
 
 
 function GrandmaRecipeOne(props) {
-
+    const currentUserEmail = props.currentUser.email
+    // console.log(currentUserEmail)
     // gives access to the query params or the complete route string.
     const location = useLocation()
-    // console.log(location)
+
     const id = location.pathname.split('/')[2]
     // console.log(id) 
 
     const [recipe, setRecipe] = useState([])
-    const [user, setUser] = useState(props.currentUser)
+    const [title, setTitle] = useState('')
+    const [description, setDescription] = useState('')
+    const [updatePageMode, setupdatePageMode] = useState(false)
+
     
 
+    const history = useHistory()
+
+    // console.log(props.currentUser.email)
+    // console.log(recipe.userEmail)
+    
     useEffect(() => {
         async function fetchOneRecipe(){
             const res  =  await recipeService.getOneGrandmaRecipe(id)
-            console.log (res)
+            // console.log (res)
             setRecipe(res.data)
         }
         fetchOneRecipe()
     }, [id])
  
+    const handleDelete = async () => {
+        try{
+            await axios.delete(`/recipes/delete/${id}`, { data: {userEmail: currentUserEmail }})
+            history.push('/recipes')
+        } catch(err){
+            console.log(err)
+            
+        }  
+    }
+
     return (
         <div className="gmRecOne">
 
@@ -49,13 +70,19 @@ function GrandmaRecipeOne(props) {
                 )}
             
                 </div>
-
-
-                <div className="gmRecOneIcons">
-                    <i className="gmRecOneEdit fas fa-user-edit"></i>
-                    <i className="gmRecOneDelete fas fa-trash-alt"></i>
-
-                </div>
+                
+                { recipe.userEmail === currentUserEmail &&
+                    <div className="gmRecOneIcons">
+                        {/* Update */}
+                        <i className="gmRecOneEdit fas fa-user-edit"
+                            
+                        />
+                        {/* Delete */}
+                        <i className="gmRecOneDelete fas fa-trash-alt"
+                            onClick={handleDelete} />
+                      
+                    </div>
+                }
                 <span className="gmRecOneTitle">{recipe.title}</span>
                 
                 

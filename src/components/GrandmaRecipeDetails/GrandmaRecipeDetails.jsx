@@ -2,10 +2,12 @@ import './GrandmaRecipeDetails.css';
 import Categories from '../Categories/Categories'
 import GrandmaRecipeOne from '../GrandmaRecipeOne/GrandmaRecipeOne'
 
-function GrandmaRecipeDetails() {
+function GrandmaRecipeDetails(props) {
+    const currentUser = props.currentUser
+
     return (
         <div className="gmRecDetails">
-            <GrandmaRecipeOne />
+            <GrandmaRecipeOne currentUser={currentUser}/>
             <Categories />  
         </div>
     )

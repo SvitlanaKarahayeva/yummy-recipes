@@ -18,13 +18,10 @@ const  getGrandmaRecipes = (search) => {
   try{
     let response = axios.get('/recipes' + search)
     return response
-  }
-  catch(err) { console.log("Error accured", err) } 
+  } catch(err) { console.log("Error accured", err) } 
 }
 
-// Get One recipe from database
-
-
+// Get One recipe from database, 
 const getOneGrandmaRecipe = (id) => {
     try{
       let response = axios.get('/recipes/' + id);
@@ -32,20 +29,18 @@ const getOneGrandmaRecipe = (id) => {
     } catch(err){ console.log("Error accured", err) } 
 }
 
-
+// Create new recipe (called in GradmaRecipeCreatePage)
 const createGrandmaRecipe = (newRecipe) => {
   try{
     const res = axios.post('/recipes/create', newRecipe)
 
- }catch(error){
-     console.log(error)
- }
+ } catch(err) { console.log("Error accured", err) } 
 }
 
 const recipesServicesExports = {
   getGrandmaRecipes,
   getOneGrandmaRecipe,
-  createGrandmaRecipe
+  createGrandmaRecipe,
 }
 
 export default recipesServicesExports;

@@ -28,6 +28,7 @@ function GrandmaRecipeCreatePage(props) {
         }
         try{
            const res = recipeService.createGrandmaRecipe(newRecipe)
+        //    redirect to home page
            history.push('/recipes')
 
         }catch(error){
@@ -36,8 +37,6 @@ function GrandmaRecipeCreatePage(props) {
         
     }
     
-    
-
     return (
         <div className="gmRecipeCreate" onSubmit={handleSubmit}>
                 <form className="gmRecipeCreateForm">
