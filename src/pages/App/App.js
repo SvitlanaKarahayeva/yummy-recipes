@@ -46,10 +46,16 @@ class App extends Component {
         <Route exact path="/">
             <HomePage />
           </Route>
-
-          <Route exact path="/create">
-            <GrandmaRecipeCreatePage />
-          </Route>
+          
+          <Route exact path="/recipes/create" 
+            render=
+            {
+              ({ history }) => 
+                <GrandmaRecipeCreatePage 
+                  history={history} 
+                  currentUser= {this.state.user}  />
+            }
+          />
           
 
 

@@ -38,8 +38,16 @@ function GrandmaRecipeOne(props) {
             }
             <div className="gmRecOneInfo">
                 <div className="gmRecOneCategory">
-                    <span>Lunch</span>
-                    <span>Breakfast</span>
+                { recipe.categories && recipe.categories.map((cat, idx) => 
+                    
+                        <span key={idx}>
+                            <Link to={`/recipes?category=${cat}`} className="link">
+                                {cat}
+                            </Link>
+                        </span>
+                    
+                )}
+            
                 </div>
 
 

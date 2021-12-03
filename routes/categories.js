@@ -8,4 +8,5 @@ router.get('/', categoriesCtrl.index);
 /* CREATE new category */
 router.post('/create', categoriesCtrl.createCategory);
 
+
 module.exports = router;

@@ -1,11 +1,44 @@
+import axios from 'axios'
+import {useState} from 'react'
+import { useHistory } from 'react-router-dom'
 import './GrandmaRecipeCreatePage.css'
 
 
-function GrandmaRecipeCreatePage() {
+
+function GrandmaRecipeCreatePage(props) {
+    const currentUserEmail = props.currentUser.email
+    // console.log(props.currentUser.email)
+    const [title, setTitle] = useState('')
+    const [image, setImage] = useState('')
+    const [description, setDescription] = useState('')
+    const [categories, setCategories] = useState('')
+    const history = useHistory()
+    
+    
+     const handleSubmit = async (event) => {
+        event.preventDefault();
+        const newRecipe = {
+            userEmail: currentUserEmail,
+            title,
+            image,
+            description,
+            categories,
+            
+        }
+        try{
+           const res = await axios.post('/recipes/create', newRecipe)
+           history.push('/recipes')
+
+        }catch(error){
+            console.log(error)
+        }
+        
+    }
+    
     
 
     return (
-        <div className="gmRecipeCreate">
+        <div className="gmRecipeCreate" onSubmit={handleSubmit}>
                 <form className="gmRecipeCreateForm">
                     <span className="gmRecipeCreateTitle">Create new yummy recipe</span>
                     
@@ -15,7 +48,7 @@ function GrandmaRecipeCreatePage() {
                         type="text" 
                         placeholder="Add a Title" 
                         name="title"
-                        // onChange={this.handleChange}    
+                        onChange={(e) => setTitle(e.target.value)}    
                         
                     />
                     
@@ -25,20 +58,30 @@ function GrandmaRecipeCreatePage() {
                         type="text" 
                         placeholder="Add your image url"
                         name="image"
-                          // onChange={this.handleChange}
+                        onChange={(e) => setImage(e.target.value.toLowerCase())}    
+
                     />
                     
                     <label>Description</label>
                     <textarea 
                         className="gmRecipeCreateInput" 
-                        type="password" 
+                        type="text" 
                         placeholder="Cooking instructions"
                         name="description"
-                        // onChange={this.handleChange}
+                        onChange={(e) => setDescription(e.target.value)}    
+                        
+                    />
+                    <label>Category</label>
+                    <input 
+                        className="gmRecipeCreateInput" 
+                        type="text" 
+                        placeholder="Add category"
+                        name="categories"
+                        onChange={(e) => setCategories(e.target.value.toLowerCase())} 
                     />
                     
                     
-                    <button className="gmRecipeCreateButton">Create</button>
+                    <button className="gmRecipeCreateButton" type="submit">Create</button>
                 </form>
             </div>
     )
