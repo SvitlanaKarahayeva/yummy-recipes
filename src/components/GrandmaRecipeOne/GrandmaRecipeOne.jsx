@@ -47,7 +47,7 @@ function GrandmaRecipeOne(props) {
     const handleDelete = async () => {
         try{
             await axios.delete(`api/recipes/delete/${id}`, { data: {userEmail: currentUserEmail }})
-            history.push('api/recipes')
+            history.push('/recipes')
         } catch(err){
             console.log(err)   
         }  
@@ -62,7 +62,7 @@ function GrandmaRecipeOne(props) {
                 description,
                 categories   
             })
-            history.push(`api/recipes/${id}`)
+            history.push(`/recipes/${id}`)
         } catch(err){
             console.log(err)   
         }  
