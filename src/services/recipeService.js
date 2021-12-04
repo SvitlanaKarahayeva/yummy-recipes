@@ -35,7 +35,7 @@ const getOneGrandmaRecipe = (id) => {
 // Create new recipe (called in GradmaRecipeCreatePage)
 const createGrandmaRecipe = (newRecipe) => {
   try{
-    axios.post('api/recipes/create', newRecipe)
+    axios.post('api/create', newRecipe)
 
  } catch(err) { console.log("Error accured", err) } 
 }
