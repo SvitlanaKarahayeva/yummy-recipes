@@ -21,7 +21,7 @@ function Categories() {
             <div className="categoryItems">
                 <ul className="categoryList">
                     { categories?.map( (cat, idx) => (
-                        <Link to={`/recipes?category=${cat.name}`} key={idx}>
+                        <Link to={`api/recipes?category=${cat.name}`} key={idx}>
                             <li className="link">{ cat.name }</li>
                         </Link>
                     ))}

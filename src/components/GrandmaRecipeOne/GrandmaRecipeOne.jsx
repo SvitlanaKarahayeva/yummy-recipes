@@ -46,8 +46,8 @@ function GrandmaRecipeOne(props) {
     // ---DELETE function with axios req--- 
     const handleDelete = async () => {
         try{
-            await axios.delete(`/recipes/delete/${id}`, { data: {userEmail: currentUserEmail }})
-            history.push('/recipes')
+            await axios.delete(`api/recipes/delete/${id}`, { data: {userEmail: currentUserEmail }})
+            history.push('api/recipes')
         } catch(err){
             console.log(err)   
         }  
@@ -55,14 +55,14 @@ function GrandmaRecipeOne(props) {
 
     const handleUpdate = async () => {
         try{
-            await axios.put(`/recipes/update/${id}`, { 
+            await axios.put(`api/recipes/update/${id}`, { 
                 userEmail: currentUserEmail,
                 title,
                 image,
                 description,
                 categories   
             })
-            history.push(`/recipes/${id}`)
+            history.push(`api/recipes/${id}`)
         } catch(err){
             console.log(err)   
         }  
