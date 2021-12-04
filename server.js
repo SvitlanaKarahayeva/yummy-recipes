@@ -36,6 +36,8 @@ app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'));
   });
 
+// if (process.env.NODE_ENV === 'production')
+
   const port = process.env.PORT || 3001
 
   app.listen(port, function(){

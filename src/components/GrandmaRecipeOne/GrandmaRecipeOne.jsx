@@ -43,7 +43,7 @@ function GrandmaRecipeOne(props) {
         fetchOneRecipe()
     }, [id])
  
-    {/* ---DELETE function with axios req--- */}
+    // ---DELETE function with axios req--- 
     const handleDelete = async () => {
         try{
             await axios.delete(`/recipes/delete/${id}`, { data: {userEmail: currentUserEmail }})
@@ -77,7 +77,7 @@ function GrandmaRecipeOne(props) {
             {/* ------------------Update Recipe Page------------------- */}
 
                 { recipe.image && 
-                <img className="gmRecOneImg" src={recipe.image} />  
+                <img className="gmRecOneImg" src={recipe.image} alt=""/>  
                 }
                 
                 <form className="gmRecipeCreateForm">
@@ -132,7 +132,7 @@ function GrandmaRecipeOne(props) {
                 {/* ------------------Single Recipe Page------------------- */}
 
             { recipe.image && 
-                <img className="gmRecOneImg" src={recipe.image} />  
+                <img className="gmRecOneImg" src={recipe.image} alt=""/>  
             }
 
             {/* ---Categories--- */}

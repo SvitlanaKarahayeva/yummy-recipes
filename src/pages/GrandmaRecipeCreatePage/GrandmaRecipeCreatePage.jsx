@@ -27,7 +27,7 @@ function GrandmaRecipeCreatePage(props) {
             
         }
         try{
-           const res = recipeService.createGrandmaRecipe(newRecipe)
+           recipeService.createGrandmaRecipe(newRecipe)
         //    redirect to home page
            history.push('/recipes')
 

@@ -9,10 +9,11 @@ function GrandmaRecipe(props) {
         <div className="gmRecipe">
             { props.recipe.image && (
                 <img 
-                    src={props.recipe.image}
-                    alt="Recipe image" 
+                    src={props.recipe.image} 
+                    alt=""
                 /> 
-            )}
+            )
+            }
 
             <div className="gmRecipeInfo">
                 <div className="gmRecipeCategory">
