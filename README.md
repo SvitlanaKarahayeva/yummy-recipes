@@ -12,8 +12,8 @@ User can filter recipes by categories and by user email address.
 Only oregistered and logged in user can view data.
   
  # ERD 
+  ![](https://i.imgur.com/KIhp4wH.png)
   
-  https://i.imgur.com/KIhp4wH.png
   
  # Images
   
