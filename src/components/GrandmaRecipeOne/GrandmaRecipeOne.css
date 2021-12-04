@@ -4,6 +4,7 @@
     margin: 50px 130px 30px 130px;
     align-items: center;
     align-content: center;
+    justify-content: center;
   
 }
 
@@ -65,4 +66,10 @@
 .gmRecOneEmail{
     font-family: 'Comfortaa', cursive;
     color: rgb(5, 30, 109);
+}
+
+/* Update form styling */
+.gmRecipeCreateForm{
+    max-width: 600px;
+
 }

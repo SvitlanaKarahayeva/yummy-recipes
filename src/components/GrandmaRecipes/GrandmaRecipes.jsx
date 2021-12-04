@@ -9,7 +9,8 @@ function GrandmaRecipes(props) {
             <div className="gmRecipesHeader">
                 <img 
                     className="gmRecipesHeaderImg"
-                    src="https://i.imgur.com/SUJv0h8.jpg"  
+                    src="https://i.imgur.com/SUJv0h8.jpg" 
+                    alt="" 
                 />
                 
                 <h1 className="gmRecipesHeaderName">Grandma Recipes</h1>
@@ -24,7 +25,7 @@ function GrandmaRecipes(props) {
 
             {/* mapping through recipes list from db */}
             
-            { props.recipes.map((recipe, idx) =>( 
+            {  props.recipes?.map((recipe, idx) =>( 
                 <GrandmaRecipe key={idx} recipe={recipe}/> 
                 )) 
             }        

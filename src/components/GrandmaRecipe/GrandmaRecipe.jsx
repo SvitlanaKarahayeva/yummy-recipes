@@ -25,6 +25,14 @@ function GrandmaRecipe(props) {
                 <Link to={`recipes/${props.recipe._id}`} className="link">
                     <span className="gmRecipeTitle link"> {props.recipe.title} </span>
                 </Link>
+
+                <div className="gmRecOneEmail">
+                    <span>Created by:&nbsp;&nbsp; 
+                        <Link to={`/recipes?userEmail=${props.recipe.userEmail}`} className="link">
+                            <i className="fas fa-envelope"></i> <b>{props.recipe.userEmail}</b>
+                        </Link>
+                    </span>
+                </div>   
                 <hr />       
             </div>    
             <p className="gmRecipeDescription"> {props.recipe.description} </p>

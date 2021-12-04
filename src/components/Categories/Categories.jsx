@@ -20,7 +20,7 @@ function Categories() {
             <span className="catTitle">Choose Yummy's Category</span>
             <div className="categoryItems">
                 <ul className="categoryList">
-                    { categories.map( (cat, idx) => (
+                    { categories?.map( (cat, idx) => (
                         <Link to={`/recipes?category=${cat.name}`} key={idx}>
                             <li className="link">{ cat.name }</li>
                         </Link>

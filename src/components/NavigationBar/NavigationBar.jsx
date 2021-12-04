@@ -24,6 +24,7 @@ function NavigationBar(props) {
                     </Nav>
 
                     <Nav>
+                        <Nav.Link href="/recipes">Grandma Yummies</Nav.Link>
                         <Nav.Link href="#memes"><span>Welcome, {props.currentUser.name}</span></Nav.Link>
                         <Nav.Link href="/" onClick={props.handleLogout}>Logout</Nav.Link>
                     </Nav>
