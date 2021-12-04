@@ -1,6 +1,6 @@
 # Yummy Recipes App 
 
-Yuppy Recipes app is a fukk-stack MERN app.
+Yuppy Recipes app is a full-stack MERN app.
 
 ## Main functionality of the app  
 
