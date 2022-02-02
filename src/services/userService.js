@@ -1,5 +1,5 @@
 import tokenService from './tokenService'
-const BASE_URL = 'http://localhost:3001/api/users'
+const BASE_URL = 'http://localhost:3001/users'
 
 //REGISTER user
 

@@ -19,7 +19,6 @@ function NavigationBar(props) {
                         <NavDropdown title="Find your Yummies" id="collasible-nav-dropdown">
                             <NavDropdown.Item href="/onlinerecipes">Online Yummies</NavDropdown.Item>
                             <NavDropdown.Item href="/recipes">Grandma Yummies</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Youtube Yummies</NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
 

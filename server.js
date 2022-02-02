@@ -23,9 +23,9 @@ app.use(cors({
     origin: '*'
   }));
 
-app.use('/api/users', usersRouter);
-app.use('/api/recipes', recipesRouter);
-app.use('/api/categories', categoriesRouter);
+app.use('/users', usersRouter);
+app.use('/recipes', recipesRouter);
+app.use('/categories', categoriesRouter);
 
 app.use(express.static(path.join(__dirname, 'build')));
 
