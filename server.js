@@ -24,7 +24,7 @@ app.use(cors({
   }));
 
 app.use('/users', usersRouter);
-app.use('/recipes', recipesRouter);
+app.use('/api/recipes', recipesRouter);
 app.use('/categories', categoriesRouter);
 
 app.use(express.static(path.join(__dirname, 'build')));

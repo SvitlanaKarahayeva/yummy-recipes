@@ -19,7 +19,7 @@ import axios from "axios";
 // called in GrandmaRecipePage
 const  getGrandmaRecipes = (search) => {
   try{
-    let response = axios.get('http://localhost:3001/recipes/' + search)
+    let response = axios.get('http://localhost:3001/api/recipes/' + search)
     return response
   } catch(err) { console.log("Error accured", err) } 
 }
@@ -27,7 +27,7 @@ const  getGrandmaRecipes = (search) => {
 // Get One recipe from database, 
 const getOneGrandmaRecipe = (id) => {
     try{
-      let response = axios.get('http://localhost:3001/recipes/' + id);
+      let response = axios.get('http://localhost:3001/api/recipes/' + id);
       return response
     } catch(err){ console.log("Error accured", err) } 
 }
@@ -35,7 +35,7 @@ const getOneGrandmaRecipe = (id) => {
 // Create new recipe (called in GradmaRecipeCreatePage)
 const createGrandmaRecipe = (newRecipe) => {
   try{
-    axios.post('http://localhost:3001/recipes/create', newRecipe)
+    axios.post('http://localhost:3001/api/recipes/create', newRecipe)
 
  } catch(err) { console.log("Error accured", err) } 
 }
